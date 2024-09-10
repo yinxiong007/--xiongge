@@ -67,12 +67,24 @@ page_data, total_pages = paginate_orders(orders, page, per_page)
 # 输出结果
 for order in page_data:
     print(order)
-print(f"Total pages: {total_pages}")'''
+print(f"Total pages: {total_pages}")
 
 
-import subprocess
-exe_path = 'D:\work\test\mock_conveyor\testpy'
-subprocess.run(exe_path)
+def calculate_total_pages_optimized(total_items, per_page):
+    # 直接计算总页数，包括可能的余数导致的额外一页
+    return (total_items - 1) // per_page + 1
+
+
+# 使用优化的函数
+total_pages_optimized = calculate_total_pages_optimized(150, 50)
+print(f"Total pages (optimized): {total_pages_optimized}")'''
+
+
+
+
+
+
+
 
 
 

@@ -23,6 +23,7 @@ def getTask(b):
         response = requests.post(taskQuery_url, headers=headers, data=r)
         # print(response.json())
         tasks = response.json().get('data').get('tasks')
+        print(tasks)
         for a in tasks:
             taskCode = a.get('taskCode')
             status = a.get('status')
